@@ -1,0 +1,158 @@
+html {
+    overflow-y: scroll;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(244, 247, 235);
+    box-sizing: border-box;
+    padding-bottom: 10.5%;
+}
+
+h1 h2 {
+    color: rgb(53, 59, 33);
+}
+
+.mynav {
+    background-color: rgb(22, 124, 241);
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+img {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(22, 124, 241);
+    color: rgb(255, 255, 255, 0.60);
+}
+
+footer a {
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.60);
+}
+
+
+/* .btn-simple {
+  border: rgba(255, 255, 255, 0.37) 2px solid ;
+  background-color:  rgba(255, 255, 255, 0.10);
+  margin: 3px;
+  box-sizing: border-box;
+  
+} */
+
+.mynav a {
+    color: rgb(255, 255, 255, 0.80);
+}
+
+.navbar-brand {
+    font-size: 30px;
+    transition-property: color;
+    transition-duration: 2s;
+}
+
+.navbar-brand:hover {
+    color: beige;
+}
+
+input {
+    background-color: rgb(22, 124, 241);
+    color: rgb(255, 255, 255);
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-color: rgba(22, 124, 241, 0.438);
+    border-radius: 4px;
+    transition-property: size;
+    transition-duration: 0.5s;
+}
+
+input:hover {
+    border-right-color: rgba(255, 255, 255, 0.397);
+    border-bottom-color: rgba(255, 255, 255, 0.397);
+    text-shadow: 0.5px 0.5px rgb(211, 228, 247, 0.5);
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@-moz-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@-o-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@-webkit-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+
+@-moz-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+
+@-o-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+
+
+/* Main styles */
+
+body {
+    background-color: rgb(244, 247, 235);
+    /* font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif; */
+    /* img size is 50x50 */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+    -webkit-animation: bg-scrolling-reverse .92s infinite;
+    /* Safari 4+ */
+    -moz-animation: bg-scrolling-reverse .92s infinite;
+    /* Fx 5+ */
+    -o-animation: bg-scrolling-reverse .92s infinite;
+    /* Opera 12+ */
+    animation: bg-scrolling-reverse .92s infinite;
+    /* IE 10+ */
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
