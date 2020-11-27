@@ -17,3 +17,5 @@ class PostForm(forms.ModelForm):
                     pk__in=user.groups.values_list("group__pk")
                 )
             )
+
+

@@ -156,3 +156,21 @@ body {
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
 }
+
+
+/* Secondary Phase Styling */
+
+.content-section {
+    background: rgba(194, 183, 183, 0.75);
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}

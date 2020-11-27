@@ -1,0 +1,12 @@
+{% extends "posts/post_base.html" %}
+
+{% load bootstrap3 %}
+
+{% block post_content %}
+<h4>Update Post</h4>
+<form method="POST" action="{% url 'posts:update' pk=object.pk %}" id="postForm">
+	{% csrf_token %}
+	{% bootstrap_form form %}
+	<input type="submit" value="Update" class="my-btn">
+</form>
+{% endblock %}

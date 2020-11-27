@@ -1,26 +1,26 @@
-.mycontent{
-  padding-top: 100px;
- border: 10px solid rgb(210, 211, 228);
+.mycontent {
+    padding-top: 100px;
+    border: 10px solid rgb(210, 211, 228);
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;;
-  background:rgb(210, 211, 228);
-  margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    ;
+    background: rgb(210, 211, 228);
+    margin: 0;
 }
 
-
 #note {
-  position: absolute;
-  color: rgb(210, 211, 228);
-  left: 0;
-  right: 0;
-  bottom: 20px;
-  margin: auto;
-  text-align: center;
-  user-select: none;
-  font-family: Arial;
+    position: absolute;
+    color: rgb(210, 211, 228);
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+    text-align: center;
+    user-select: none;
+    font-family: Arial;
 }

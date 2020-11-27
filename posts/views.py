@@ -67,6 +67,13 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
         return super().form_valid(form)
 
 
+class UpdatePost(LoginRequiredMixin, SelectRelatedMixin, generic.UpdateView):
+    template_name = "posts/post_update.html"
+    fields = ('message', 'group')
+    model = models.Post
+    select_related = ()
+
+
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     model = models.Post
     select_related = ("user", "group")

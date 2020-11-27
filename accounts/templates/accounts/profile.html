@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<div class="content-section">
+      <div class="media">
+        <img class="img-circle img-responsive account-img" alt="Responsive image" src="{{ user.userprofile.profile_image.url }}" max-width="auto" height="auto">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+     <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form p_form %}
+        {% bootstrap_form u_form %}
+        <input type="submit" value="Update" class="btn btn-default">
+    </form>
+    </div>
+
+{% endblock %}

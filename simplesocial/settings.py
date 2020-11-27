@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'groups',
     'posts',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = "test"
 LOGOUT_REDIRECT_URL = "thanks"
