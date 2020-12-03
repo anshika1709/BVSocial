@@ -1,8 +1,8 @@
 {% extends "posts/post_base.html" %}
 
 {% block prepost %}
-<div class="col-md-4">
-	<h1>@{{ post_user.username }}</h1>
+<div class="col-md-3 jumbotron">
+	<p>@{{ post_user.username }}'s</p>
 	<p>Post History</p>
 </div>
 {% endblock %}

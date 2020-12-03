@@ -3,10 +3,12 @@
 {% load bootstrap3 %}
 
 {% block post_content %}
+<div class="pre-content nav-d">
 <h4>Create New Post</h4>
 <form method="POST" action="{% url 'posts:create' %}" id="postForm">
 	{% csrf_token %}
 	{% bootstrap_form form %}
 	<input type="submit" value="Post" class="my-btn">
 </form>
+<div class="pre-content">
 {% endblock %}

@@ -1,23 +1,31 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import(LoginRequiredMixin,PermissionRequiredMixin)
 
+from django.http import Http404
 from django.urls import reverse
 from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from groups.models import Group,GroupMember
 from . import models
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     fields = ("name", "description")
     model = Group
 
-class SingleGroup(generic.DetailView):
+class SingleGroup(generic.DetailView, LoginRequiredMixin):
     model = Group
 
-class ListGroups(generic.ListView):
+class ListGroups(generic.ListView, LoginRequiredMixin):
     model = Group
 
+class UserGroups(generic.ListView, LoginRequiredMixin):
+    template_name = "groups/user_group.html"
+    model = Group
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 

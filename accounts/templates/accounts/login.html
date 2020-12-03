@@ -2,12 +2,13 @@
 {% load bootstrap3 %}
 
 {% block content %}
-<div class="container">
-    <h1>Login</h1>
+<div class="pre-content nav-d">
+    <h1 class="form-text page-header">Login</h1>
     <form method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" value="Login" class="my-btn">
+        <a href="{% url 'accounts:password_reset' %}" class="btn btn-simple">Forgot Password?</a>
     </form>
 </div>
 {% endblock %}

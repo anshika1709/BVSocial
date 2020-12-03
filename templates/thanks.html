@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="jumbotron">
+<center>
 <h1>Thank You for visiting!</h1>
-
+ {% if user.is_authenticated == False %}
+         <h2><a href="{% url 'accounts:login' %}">Login</a> or <a href="{% url 'accounts:signup' %}">Sign-up</a> for free to get started!</h2>
+  	{% endif %}
+</center>
+</div>
 {% endblock %}

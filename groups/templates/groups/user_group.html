@@ -9,26 +9,22 @@
 			Hi!<p>Welcome back
 			<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
 			</p>
-		</center>
+	
 		</h2>
-
     	{% endif %}
-			<p>Join a Group with a shared interest!</p>
+			<p>Check updates!</p>
+			</center>
 	</div>
-	{% if user.is_authenticated %}
-	<p>OR create one!</p>
-	<a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span> Create New Group!</a>
-	{% endif %}
 </div>
 {% endblock %}
 
 {% block group_content %}
 
-<div class="nav-d">
-{% if user.is_authenticated  %}
-<div class="col-md-8">
+{% if user.is_authenticated %}
+<div class="col-md-8 nav-d">
 	<div class="list-group">
 		{% for group in object_list %}
+        {% if user in group.members.all %}
 		  <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
 			     <h3 class="title list-group-item-heading">{{ group.name }}</h3>
 			<div class="list-group-item-text container-fluid">
@@ -48,31 +44,9 @@
 				</div>
 			</div>
 		</a>
+        {% endif %}
 		{% endfor %}
 	</div>
 </div>
 {% endif %}
-{% if user.is_authenticated == False %}
-<div class="col-md-8">
-	<div class="list-group">
-		{% for group in object_list %}
-		  <a class="list-group-item" href="{% url 'accounts:login'%}">
-			     <h3 class="title list-group-item-heading">{{ group.name }}</h3>
-			<div class="list-group-item-text container-fluid">
-				{{ group.description|safe }}
-				<div class="row">
-					<div class="col-md-4">
-						<span class="badge">{{ group.members.count }}</span> member{{ group.members.count|pluralize }}
-					</div>
-					<div class="col-md-4">
-						<span class="badge">{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}
-					</div>
-				</div>
-			</div>
-		</a>
-		{% endfor %}
-	</div>
-</div>
-{% endif %}
-</div>
 {% endblock %}

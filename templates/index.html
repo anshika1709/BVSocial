@@ -4,7 +4,7 @@
 
 
 <div class="flex-1">
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic slider" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -39,10 +39,14 @@
   </a>
 </div>	
     <center>
+    <div class="jumbotron">
     <h1>Welcome to BVSocial!</h1>
     <h2>The best community to create groups and talk for students!</h2>
-    <h2><a href="{% url 'accounts:login' %}">Login</a> or <a href="{% url 'accounts:signup' %}">Sign-up</a> for free to get started!</h2>
-  </center>
+    {% if user.is_authenticated == False %}
+         <h2><a href="{% url 'accounts:login' %}">Login</a> or <a href="{% url 'accounts:signup' %}">Sign-up</a> for free to get started!</h2>
+  	{% endif %}
+    </div>
+   </center>
   </div>
 
 {% endblock %}

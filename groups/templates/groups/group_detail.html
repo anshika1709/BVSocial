@@ -2,21 +2,16 @@
 
 {% block pregroup %}
 
+<div class="page-header">
+  <h1>{{group.name}} 
+  	{% if user in group.members.all %}
+		<a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Remove from favorites</a>
+	{% else %}
+		<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Add to favorites</a>
+	{% endif %}
 
-<h1>{{group.name}}</h1>
-<h2> Member Count: {{group.members.count}}</h2>
-
-  <div class="content">
-
-
-				{% if user in group.members.all %}
-					<a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
-				{% else %}
-					<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
-				{% endif %}
-
-
-
+  </h1>
+  <p><em>favourite of {{group.members.count}} members</em></p>
 </div>
 
 {% endblock %}
@@ -26,7 +21,7 @@
 
 <div class="col-md-8">
 	{% if group.posts.count == 0 %}
-	<h2>No posts in this group yet!</h2>
+	<h2 class="space jumbotron">No posts in this group yet!</h2>
 
 	{% else %}
 
@@ -35,5 +30,6 @@
 		{% endfor %}
 
 	{% endif %}
+</div>
 </div>
 {% endblock %}
