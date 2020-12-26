@@ -14,12 +14,12 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class PostList(SelectRelatedMixin, generic.ListView):
+class PostList(SelectRelatedMixin, generic.ListView, LoginRequiredMixin):
     model = models.Post
     select_related = ("user", "group")
 
 
-class UserPosts(generic.ListView):
+class UserPosts(generic.ListView, LoginRequiredMixin):
     model = models.Post
     template_name = "posts/user_post_list.html"
 
@@ -39,7 +39,7 @@ class UserPosts(generic.ListView):
         return context
 
 
-class PostDetail(SelectRelatedMixin, generic.DetailView):
+class PostDetail(SelectRelatedMixin, generic.DetailView, LoginRequiredMixin):
     model = models.Post
     select_related = ("user", "group")
 
